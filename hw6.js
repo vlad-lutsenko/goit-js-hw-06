@@ -77,18 +77,13 @@ console.log(getUsersWithFriend(users, "Briana Decker"));
 console.log(getUsersWithFriend(users, "Goldie Gentry"));
 
 //task-9
-//Массив имен (поле name) людей, отсортированных в
-//зависимости от количества их друзей (поле friends)
 
 const getNamesSortedByFriendsCount = users => {
-  const sortedByFriendsCount = (a, b) => {
-    a.friends.length - b.friends.length;
-  };
-  return users.sort(sortedByFriendsCount);
-  // .map(userSortedByFriendsCount => userSortedByFriendsCount.name);
+  return users
+    .sort((a, b) => {
+      return a.friends.length - b.friends.length;
+    })
+    .map(userSortedByFriendsCount => userSortedByFriendsCount.name);
 };
 
 console.log(getNamesSortedByFriendsCount(users));
-// [ 'Moore Hensley', 'Sharlene Bush', 'Elma Head',
-//'Carey Barr',
-// 'Blackburn Dotson', 'Sheree Anthony', 'Ross Vazquez' ]
